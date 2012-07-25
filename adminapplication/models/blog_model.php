@@ -12,13 +12,13 @@ class Blog_model extends CI_Model  {
  	}
  	public function addnews()
  	{
- 		 $title=$_POST["title"];
-		 $content=$_POST["content"];
+ 		$title=$_POST["title"];
+	    $content=$_POST["content"];
+		$cid='1';
+		$datetime=date('Y-m-d');
 		
-			$cid='1';
 		
-		
-  		$date=$this->db->query('INSERT INTO blog (title,content,cid) VALUES ("'.$title.'","'.$content.'","'.$cid.'")');
+  		$date=$this->db->query('INSERT INTO blog (title,content,cid,datetime) VALUES ("'.$title.'","'.$content.'","'.$cid.'","'.$datetime.'")');
   		
  	}
  	public function delnews($myid)

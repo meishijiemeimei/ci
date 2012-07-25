@@ -23,12 +23,13 @@ class Main extends CI_Controller {
  	}
  	public function addnews_insert()
  	{
+       
   		$this->load->model('blog_model');
 
   		$this->blog_model->addnews();
   		
   		$date['news']=$this->blog_model->get();
-  		$this->load->view('main',$date);
+  		redirect($base_url.'main');
 
   		
  	}

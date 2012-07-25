@@ -15,7 +15,7 @@ class Blog_model extends CI_Model  {
  		$title=$_POST["title"];
 	    $content=$_POST["content"];
 		$cid='1';
-		$datetime=date('Y-m-d');
+		$datetime=date('Y-m-d H:i:s');
 		
 		
   		$date=$this->db->query('INSERT INTO blog (title,content,cid,datetime) VALUES ("'.$title.'","'.$content.'","'.$cid.'","'.$datetime.'")');

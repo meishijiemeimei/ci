@@ -116,38 +116,13 @@
               </div>
               <div class="main_newslist" >
                   <table borer="0" width="100%" class="main_newslist_list">
-                    <tr>
+                    <?foreach ($list as $row):?>
+                      <tr>
                       <td width="10%" align="center">·</td>
-                      <td width="60%">网站正式上线</td>
-                      <td>2012-7-23</td>
-                    </tr>
-                    <tr>
-                      <td align="center">·</td>
-                      <td>网站正式上线</td>
-                      <td>2012-7-23</td>
-                    </tr>
-                    <tr>
-                      <td align="center">·</td>
-                      <td>网站正式上线</td>
-                      <td>2012-7-23</td>
-                    </tr>
-                    <tr>
-                      <td align="center">·</td>
-                      <td>网站正式上线</td>
-                      <td>2012-7-23</td>
-                    </tr>
-                    <tr>
-                      <td align="center">·</td>
-                      <td>网站正式上线</td>
-                      <td>2012-7-23</td>
-                    </tr>
-                    <tr>
-                      <td align="center">·</td>
-                      <td>网站正式上线</td>
-                      <td>2012-7-23</td>
-                    </tr>
-
-
+                      <td width="60%"><?=$row->title?></td>
+                      <td><?=date('Y-m-d',strtotime($row->datetime))?></td>
+                      </tr>                      
+                    <?endforeach;?> 
                   </table>
               </div>
             </div>

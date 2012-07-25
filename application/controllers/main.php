@@ -7,8 +7,10 @@ class Main extends CI_Controller {
 
 	 public function index()
  	{
-  		
-  		$this->load->view('main');
+  		$this->load->model('blog_model');
+  		$date['list']=$this->blog_model->get(7);
+
+  		$this->load->view('main',$date);
 
  	}
 

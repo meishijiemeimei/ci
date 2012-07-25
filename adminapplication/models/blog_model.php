@@ -13,7 +13,8 @@ class Blog_model extends CI_Model  {
  	public function addnews()
  	{
  		$title=$_POST["title"];
-	    $content=$_POST["content"];
+	    $content= addslashes($_POST["content1"]);
+
 		$cid='1';
 		$datetime=date('Y-m-d H:i:s');
 		

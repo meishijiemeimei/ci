@@ -6,6 +6,35 @@
 <link rel="shortcut icon" href="http://www.sh-an.com/favicon.ico" />
 <link href="<?=base_url()?>css/layout3.css" type="text/css" rel="stylesheet" /> 
 <script type="text/javascript" src="<?=base_url()?>js/jquery.js"></script>
+<link rel="stylesheet" href="<?=base_url()?>editer/themes/default/default.css" />
+  <link rel="stylesheet" href="<?=base_url()?>editer/plugins/code/prettify.css" />
+  <script charset="utf-8" src="<?=base_url()?>editer/kindeditor.js"></script>
+  <script charset="utf-8" src="<?=base_url()?>editer/lang/zh_CN.js"></script>
+  <script charset="utf-8" src="<?=base_url()?>editer/plugins/code/prettify.js"></script>
+  <script>
+    KindEditor.ready(function(K) {
+      var editor1 = K.create('textarea[name="content1"]', {
+        cssPath : '<?=base_url()?>editer/plugins/code/prettify.css',
+        uploadJson : '<?=base_url()?>editer/php/upload_json.php',
+        fileManagerJson : '<?=base_url()?>editer/php/file_manager_json.php',
+        allowFileManager : true,
+        afterCreate : function() {
+          var self = this;
+          K.ctrl(document, 13, function() {
+            self.sync();
+            K('form[name=addnews]')[0].submit();
+          });
+          K.ctrl(self.edit.doc, 13, function() {
+            self.sync();
+            K('form[name=addnews]')[0].submit();
+          });
+        }
+      });
+      prettyPrint();
+    });
+  </script>
+
+
 <style type="text/css">
   body{
     font-size: 14px;
@@ -35,12 +64,12 @@
     <td  bgcolor="#FFFFFF" >
 
       
-        <form id="addnews" action="<?=base_url()?>admin.php/main/addnews_insert" method="post">
+        <form id="addnews" name="addnews" action="<?=base_url()?>admin.php/main/addnews_insert" method="post">
         新闻标题： <input type="text" name="title" id="title" />
         <br>
-        新闻内容： <textarea  name="content" id="content" cols="80" rows="10" /></textarea>
+        新闻内容： <textarea  name="content1" id="content1" style="width:700px;height:300px;visibility:hidden;"  /></textarea>
         <br>
-        <input type="submit" style="margin-left:80px;" value="确认">
+        <input type="submit" name="button" style="margin-left:80px;" value="确认">
         </form>
        
     </td>

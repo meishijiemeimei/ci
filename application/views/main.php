@@ -119,8 +119,8 @@
                     <?foreach ($list as $row):?>
                       <tr>
                       <td width="10%" align="center">·</td>
-                      <td width="60%"><?=$row->title?></td>
-                      <td><?=date('Y-m-d',strtotime($row->datetime))?></td>
+                      <td width="60%"><?=$row->blog_title?></td>
+                      <td><?=date('Y-m-d',strtotime($row->blog_datetime))?></td>
                       </tr>                      
                     <?endforeach;?> 
                   </table>

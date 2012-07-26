@@ -7,7 +7,7 @@ class Blog_model extends CI_Model  {
 
 	 public function get()
  	{
-  		$date=$this->db->query('SELECT * FROM blog LEFT JOIN sort ON blog.cid=sort.sort_id');
+  		$date=$this->db->query('SELECT * FROM blog LEFT JOIN sort ON blog.blog_cid=sort.sort_id');
   		return $date->result();
  	}
  	public function addnews()
@@ -19,7 +19,7 @@ class Blog_model extends CI_Model  {
 		$datetime=date('Y-m-d H:i:s');
 		
 		
-  		$date=$this->db->query('INSERT INTO blog (title,content,cid,datetime) VALUES ("'.$title.'","'.$content.'","'.$cid.'","'.$datetime.'")');
+  		$date=$this->db->query('INSERT INTO blog (blog_title,blog_content,blog_cid,blog_datetime) VALUES ("'.$title.'","'.$content.'","'.$cid.'","'.$datetime.'")');
   		
  	}
  	public function delnews($myid)

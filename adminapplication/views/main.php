@@ -39,7 +39,7 @@
 
       <ul>
         <?foreach ($news as $row):?>
-          <li> · 新闻标题：<?=$row->title?> -------------------<a href="<?=base_url()?>admin.php/main/delnews/<?=$row->blog_id?>">删除</a></li>
+          <li> · 新闻标题：<?=$row->blog_title?> -------------------<a href="<?=base_url()?>admin.php/main/delnews/<?=$row->blog_id?>">删除</a></li>
         <?endforeach;?> 
       </ul>
     </td>

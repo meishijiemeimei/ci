@@ -38,12 +38,13 @@
       <br>
       <a href="<?=base_url()?>admin.php/shop">店铺管理</a>
       <a href="<?=base_url()?>admin.php/shop/addshop">添加店铺</a>
+
     </td>
     <td  bgcolor="#FFFFFF" >
 
       <ul>
-        <?foreach ($news as $row):?>
-          <li> · 新闻标题：<?=$row->blog_title?> -------------------<a href="<?=base_url()?>admin.php/main/delnews/<?=$row->blog_id?>">删除</a></li>
+        <?foreach ($shop as $row):?>
+          <li> · 店铺标题：<?=$row->shop_title?> -------------------<a href="<?=base_url()?>admin.php/shop/delshop/<?=$row->shop_id?>">删除</a></li>
         <?endforeach;?> 
       </ul>
     </td>

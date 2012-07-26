@@ -164,22 +164,13 @@
                   <div class="main_more"><a href="#">MORE >></a></div>
                   
               </div>
-              <div class="main_piclist">
-
+              <div class="main_piclist"> 
+                
                 <ul>
+                <?foreach ($shoplist as $row):?>
                   <li>
-                    <img src="<?=base_url()?>images/main_piclist.jpg" alt="" /><br /><a href="#">玫瑰秀</a></li>
-                  <li>
-                    <img src="<?=base_url()?>images/main_piclist.jpg" alt="" /><br /><a href="#">玫瑰秀</a></li>
-                  <li>
-                    <img src="<?=base_url()?>images/main_piclist.jpg" alt="" /><br /><a href="#">玫瑰秀</a></li>
-                  <li>
-                    <img src="<?=base_url()?>images/main_piclist.jpg" alt="" /><br /><a href="#">玫瑰秀</a></li>
-                  <li>
-                    <img src="<?=base_url()?>images/main_piclist.jpg" alt="" /><br /><a href="#">玫瑰秀</a></li>
-                  <li>
-                    <img src="<?=base_url()?>images/main_piclist.jpg" alt="" /><br /><a href="#">玫瑰秀</a></li>
-                  <li><img src="<?=base_url()?>images/main_piclist.jpg" alt="" /><br /><a href="#">玫瑰秀</a></li>
+                    <img src="<?=$row->shop_images?>" width="125" height="170" alt="" /><br /><a href="#"><?=$row->shop_title?></a></li>
+                <?endforeach;?> 
                 </ul>
                 
               </div>

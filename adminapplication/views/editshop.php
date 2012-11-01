@@ -74,25 +74,31 @@
     <td  bgcolor="#FFFFFF" width="20%" valign="top"><a href="<?=base_url()?>admin.php/shop">商铺管理</a></td>
     <td  bgcolor="#FFFFFF" >
 
-      
-        <form id="addshop" name="addshop" action="<?=base_url()?>admin.php/shop/addshop_insert" method="post">
-        商铺标题： <input type="text" name="title" id="title" />
+      <?foreach ($shop as $row):?>
+        <form id="addshop" name="addshop" action="<?=base_url()?>admin.php/shop/editshop_update/<?=$row->shop_id?> " method="post">
+        标题： 
+          <input name="title" type="text" id="title" value="<?=$row->shop_title?>" />
         <br>
         类别： 
-          <select  name="sortid" id="sortid" >            
-            <?foreach ($shopsort as $row):?>
+          <select  name="sortid" id="sortid" >
             <option value="<?=$row->shop_sort_id?>"><?=$row->shop_sort_title?></option>
+            
+            <?foreach ($shopsort as $row1):?>
+            <option value="<?=$row1->shop_sort_id?>"><?=$row1->shop_sort_title?></option>
             <?endforeach;?> 
-          </select>          
-      
+          </select>
+          
         <br>
-        商铺缩略图： <input type="text" name="shop_images" id="url1" value="" /> <input type="button" id="image1" value="选择图片" />（网络图片 + 本地上传）
+        缩略图： 
+        <input type="text" name="shop_images" id="url1" value="<?=$row->shop_images?>" /> <input type="button" id="image1" value="选择图片" />（网络图片 + 本地上传）
         <br>
-        商铺内容： <textarea  name="content1" id="content1" style="width:700px;height:300px;visibility:hidden;"  /></textarea>
+        描述内容： 
+        <textarea  name="content1" id="content1" style="width:700px;height:300px;visibility:hidden;"  /><?=stripslashes($row->shop_content)?> 
+        </textarea>
         <br>
         <input type="submit" name="button" style="margin-left:80px;" value="确认">
         </form>
-       
+       <?endforeach;?> 
     </td>
   </tr>
 </table>

@@ -11,11 +11,24 @@ class Shop_model extends CI_Model  {
   		return $date->result();
  	}
 	
+	
 	 public function getsort()
  	{
+		
   		$date=$this->db->query('SELECT * FROM shop_sort');
+		
   		return $date->result();
  	}
+	 public function getonesort($sid)
+ 	{
+		if($sid==0){
+  			$date=$this->db->query('SELECT * FROM shop_sort');
+		}else{
+			$date=$this->db->query('SELECT * FROM shop_sort where shop_sort_id = '.$sid);
+			}
+  		return $date->result();
+ 	}
+	
 	
 	function user_select_all($sid)
 	{

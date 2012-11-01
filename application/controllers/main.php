@@ -15,7 +15,11 @@ class Main extends CI_Controller {
   		$date['list']=$this->blog_model->get(7);
 
   		$this->load->model('shop_model');
+		
   		$date['shopsort']=$this->shop_model->getsort();
+		if($sid!=0){
+			$date['nowshopsort']=$this->shop_model->getonesort($sid);
+			}
 		
 		
 		$user=$this->shop_model->user_select_all($sid);
@@ -51,9 +55,14 @@ class Main extends CI_Controller {
 		$date['mypage']=$mypage;
 		//var_dump($list);
 		
-		
+		if($sid!=0){
+			$this->load->view('main',$date);
+			}else{
+			$this->load->view('main_nosort',$date);	
+				
+			}
 
-  		$this->load->view('main',$date);
+  		
 
  	}
 

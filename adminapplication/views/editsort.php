@@ -71,28 +71,32 @@
     <td colspan="2" bgcolor="#FFFFFF">后台管理</td>
   </tr>
   <tr>
-    <td  bgcolor="#FFFFFF" width="20%" valign="top"><a href="<?=base_url()?>admin.php/shop">商铺管理</a></td>
+    <td  bgcolor="#FFFFFF" width="20%" valign="top"><a href="<?=base_url()?>admin.php/shop/allsort">分类管理</a></td>
     <td  bgcolor="#FFFFFF" >
-
-      
-        <form id="addshop" name="addshop" action="<?=base_url()?>admin.php/shop/addshop_insert" method="post">
-        商铺标题： <input type="text" name="title" id="title" />
+ 
+      <?foreach ($sort as $row):?>
+        <form id="addshop" name="addshop" action="<?=base_url()?>admin.php/shop/editsort_update/<?=$row->shop_sort_id?>" method="post">
+        分类名称： <input name="shop_sort_title" type="text" id="shop_sort_title" value="<?=$row->shop_sort_title?>" />
         <br>
         类别： 
-          <select  name="sortid" id="sortid" >            
-            <?foreach ($shopsort as $row):?>
-            <option value="<?=$row->shop_sort_id?>"><?=$row->shop_sort_title?></option>
-            <?endforeach;?> 
+          <select  name="sort_id" id="sort_id" >
+          	  <?php if ($row->sort_id == '1'): ?>
+              <option value="1" selected="selected">按品牌</option>  
+			  <?php elseif ($row->sort_id == '2'): ?>
+              <option value="2">按属性</option> 
+			  <?php else: ?>
+              <option value=" ">　　　</option> 
+			  <?php endif; ?>  
+          	   
+              <option value="1">按品牌</option> 
+              <option value="2">按属性</option>      
+          
           </select>          
       
-        <br>
-        商铺缩略图： <input type="text" name="shop_images" id="url1" value="" /> <input type="button" id="image1" value="选择图片" />（网络图片 + 本地上传）
-        <br>
-        商铺内容： <textarea  name="content1" id="content1" style="width:700px;height:300px;visibility:hidden;"  /></textarea>
-        <br>
+       
         <input type="submit" name="button" style="margin-left:80px;" value="确认">
         </form>
-       
+       <?endforeach;?> 
     </td>
   </tr>
 </table>

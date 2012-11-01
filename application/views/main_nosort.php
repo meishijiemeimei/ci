@@ -111,7 +111,7 @@
             </div>
             <div class="main_center">
               <div class="main_title">
-                  <div class="main_titlename">当前类别 ：<?foreach ($nowshopsort as $row):?> <?=$row->shop_sort_title ?><?endforeach;?></div>                  
+                  <div class="main_titlename">当前类别 ：所有分类</div>                  
               </div>
               <div class="main_piclist"> 
                 

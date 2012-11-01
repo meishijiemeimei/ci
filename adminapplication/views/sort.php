@@ -37,7 +37,7 @@
       <a href="<?=base_url()?>admin.php/main/addnews">添加新闻</a>
       <br>-->
       
-      <a href="<?=base_url()?>admin.php/shop/allsort">分类管理</a>
+      <a href="<?=base_url()?>admin.php/shop/sort">分类管理</a>
       <a href="<?=base_url()?>admin.php/shop/addsort">添加分类</a>
       <br>
       <br>
@@ -46,10 +46,10 @@
 
     </td>
     <td  bgcolor="#FFFFFF" >
-
+	  <div><a href="<?=base_url()?>admin.php/shop/sort/1">按品牌</a>  　<a href="<?=base_url()?>admin.php/shop/sort/2">按属性</a></div>
       <ul>
         <?foreach ($shop as $row):?>
-          <li> · 店铺标题：<?=$row->shop_title?> -------------------<a href="<?=base_url()?>admin.php/shop/delshop/<?=$row->shop_id?>">删除</a> <a href="<?=base_url()?>admin.php/shop/editshop/<?=$row->shop_id?>">编辑</a></li>
+          <li> · 分类名：<?=$row->shop_sort_title?> -------------------<a href="<?=base_url()?>admin.php/shop/delshop/<?=$row->shop_id?>">删除</a> <a href="<?=base_url()?>admin.php/shop/editshop/<?=$row->shop_sort_id?>">编辑</a></li>
         <?endforeach;?> 
       </ul>
     </td>

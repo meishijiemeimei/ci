@@ -46,10 +46,10 @@
 
     </td>
     <td  bgcolor="#FFFFFF" >
-
+	  <div><a href="<?=base_url()?>admin.php/shop/allsort/1">按品牌</a>  　<a href="<?=base_url()?>admin.php/shop/allsort/2">按属性</a></div>
       <ul>
-        <?foreach ($shop as $row):?>
-          <li> · 店铺标题：<?=$row->shop_title?> -------------------<a href="<?=base_url()?>admin.php/shop/delshop/<?=$row->shop_id?>">删除</a> <a href="<?=base_url()?>admin.php/shop/editshop/<?=$row->shop_id?>">编辑</a></li>
+        <?foreach ($sort as $row):?>
+          <li> · 分类名：<?=$row->shop_sort_title?> -------------------<a href="<?=base_url()?>admin.php/shop/delsort/<?=$row->shop_sort_id?>">删除</a> <a href="<?=base_url()?>admin.php/shop/editsort/<?=$row->shop_sort_id?>">编辑</a></li>
         <?endforeach;?> 
       </ul>
     </td>

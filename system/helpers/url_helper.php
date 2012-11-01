@@ -59,6 +59,8 @@ if ( ! function_exists('site_url'))
  * @param string
  * @return	string
  */
+
+ 
 if ( ! function_exists('base_url'))
 {
 	function base_url($uri = '')

@@ -29,7 +29,7 @@ class Shop extends CI_Controller {
   		$this->shop_model->addshop();
   		
   		$date['shop']=$this->shop_model->get();
-  		redirect($base_url.'shop');
+  		redirect('shop');
 
   		
  	}

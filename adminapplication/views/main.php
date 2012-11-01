@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="http://www.sh-an.com/favicon.ico" />
 <link href="<?=base_url()?>css/layout3.css" type="text/css" rel="stylesheet" /> 
 <script type="text/javascript" src="<?=base_url()?>js/jquery.js"></script>
 <style type="text/css">

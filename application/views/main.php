@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="http://www.sh-an.com/favicon.ico" />
 <link href="<?=base_url()?>css/layout3.css" type="text/css" rel="stylesheet" /> 
 <script type="text/javascript" src="<?=base_url()?>js/jquery.js"></script>
 <script type="text/javascript">
@@ -34,8 +33,11 @@
 </head>
 <body>
     <!--navigation start-->
+    <div style="width: 1000px;padding: 0px;	margin: 0px auto;text-align: left;font-size:12px; height:28px; line-height:28px;">欢迎进入东方易城！
+    	
+    </div>
     <div id="header"><img src="<?=base_url()?>images/logo.jpg" alt="" /></div>
-    <!--navigation end-->
+<!--navigation end-->
         <!--navigation start-->
         <div id="nav">
             <ul class="menu">
@@ -86,119 +88,71 @@
             </ul>
         </div>
         <!--navigation close-->
-    <!--main content start-->    
-    <div id="main_container" >
-        <div class="flashad">
-               <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id=scriptmain name=scriptmain codebase="http://download.macromedia.com/pub/shockwave/cabs/
-        flash/swflash.cab#version=6,0,29,0" width="960" height="360">
-              <param name="movie" value="<?=base_url()?>flash/bcastr3.swf">
-              <param name="quality" value="high">
-              <param name=scale value=noscale>
-              <param name="LOOP" value="false">
-              <param name="menu" value="false">
-              <param name="wmode" value="transparent">
-              <param name="FlashVars" value="bcastr_file=<?=base_url()?>images/ad1.jpg&bcastr_link= ">
-              <embed src="<?=base_url()?>flash/bcastr3.swf" width="960" height="360" loop="false" 
-             FlashVars="bcastr_file=<?=base_url()?>images/ad1.jpg&bcastr_link="
-               quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" salign="T" name="scriptmain" menu="false" wmode="transparent"></embed>
-              </object>
-        </div>
-    </div>    
+   
 
-    <!--main content start-->    
+<!--main content start-->    
     <div id="main_container" >
         <div class="main_content">
             <div class="main_left">
               <div class="main_title">
-                  <div class="main_titlename">最新动态 <span>HOT NEWS</span></div>
-                  <div class="main_more"><a href="#">MORE >></a></div>
-                  
+                  <div class="main_titlename">品牌分类 </div>                  
               </div>
               <div class="main_newslist" >
                   <table borer="0" width="100%" class="main_newslist_list">
-                    <?foreach ($list as $row):?>
+                    <?foreach ($shopsort as $row):?>
                       <tr>
                       <td width="10%" align="center">·</td>
-                      <td width="60%"><?=$row->blog_title?></td>
-                      <td><?=date('Y-m-d',strtotime($row->blog_datetime))?></td>
-                      </tr>                      
+                      <td width="90%"><a href="<?=site_url()?>/main/index/<?=$row->shop_sort_id?>/1"><?=$row->shop_sort_title?></a></td>
+<!--                      <td><=date('Y-m-d',strtotime($row->blog_datetime))></td>
+-->                   </tr>                      
                     <?endforeach;?> 
                   </table>
               </div>
             </div>
             <div class="main_center">
               <div class="main_title">
-                  <div class="main_titlename">楼层简介 <span>FLOOR INTRO</span></div>
-                  <div class="main_more"><a href="#">MORE >></a></div>
-                  
-              </div>
-              <div>
-                <div class="f_t">
-                  <ul>
-                    <li id="l1">1层</li>
-                    <li id="l2">2层</li>
-                    <li id="l3">3层</li>
-                  </ul>
-                </div>
-                <div class="f_l clear" >
-                  <div id="t1">休闲餐饮、台湾精品果蔬、高档日用生活必需品周边社区商业配套</div>
-                  <div id="t2">6-12岁儿童生活主题区，家饰家纺区、女性购物、少儿教育机构、儿童文体用品、儿童娱乐、儿童品牌服饰，儿童数码学习教育器材</div>
-                  <div id="t3">娱乐天地、休闲中心、主题餐厅、服务中心</div>
-                </div>
-              </div>
-            </div>
-            <div class="main_right">
-              <div class="main_title">
-                  <div class="main_titlename">联系方式 <span>CONTACT</span></div>
-                  <div class="main_more"><a href="#">MORE >></a></div>
-                  
-              </div>
-              <div>
-                  <div style="margin-left:10px; margin-bottom:20px; margin-top:10px;"><img src="<?=base_url()?>images/main_contact.jpg" alt="" /></div>
-                  <div style="margin-left:5px;"><img src="<?=base_url()?>images/vippic.jpg" alt="" /></div>
-              </div>
-            </div>
-            <div class="main_2">
-              <div class="main_title">
-                  <div class="main_titlename">最新商铺 <span>NEW SHOP</span></div>
-                  <div class="main_more"><a href="#">MORE >></a></div>
-                  
+                  <div class="main_titlename">当前类别：<span>R INTRO</span></div>                  
               </div>
               <div class="main_piclist"> 
                 
                 <ul>
-                <?foreach ($shoplist as $row):?>
-                  <li>
-                    <img src="<?=$row->shop_images?>" width="125" height="170" alt="" /><br /><a href="#"><?=$row->shop_title?></a></li>
-                <?endforeach;?> 
-                </ul>
-                
+                    <?foreach ($shoplist as $row):?>
+                      <li>
+                        <img src="<?=$row->shop_images?>" height="110" alt="" /><br />
+                        <div style="text-align:left; font-size:14px; font-weight:bold; color:#666666;margin-top:10px;"><?=$row->shop_title?></a></div>
+                        <div style="text-align:left;">产地：<?=$row->shop_title?></div>
+						<div style="text-align:left;">品牌：<?=$row->shop_title?></div>
+                      </li>
+                    <?endforeach;?> 
+                    </ul>
+                                   
+              </div>
+              
+              <div style="clear:both; margin:10px;">
+			  <div class="cutpage" id="page">                
+				<?=$mypage?>  
+              </div>
+			  
               </div>
             </div>
-              
-        </div>
+            
+      </div>
     </div>    
     <!--main content start--> 
 
 
 <!--fooer start-->
+<div class="warp_b">
             <div id="footer">
-                <div class="footer_top">
-                </div>
-                <div class="clear"></div>
+            	<div style="float:left; padding-top:10px;"><img src="<?=base_url()?>images/logobt.jpg" alt="" /></div>
                 <div class="footer_mid" align="center">
                     <ul>
                         
-                        <li><a href="#">联系我们</a></li><li>|</li>
-                        <li><a href="#">关于我们</a></li>
-                        <li>|</li>
-                        <li class="copyright">版权所有 昆山正佳房产投资有限公司</li>
-                        <li class="copyright"><a href="#" target="_blank">苏ICP备05077052号</a></li>
-                        <li class="copyright">苏公网安备110108003162号</li>
+                        <li class="copyright">(C)江苏东方易城网络科技有限公司 苏ICP备11085504号</li>
                     </ul>                
-                </div>
-                
+                </div>                
             </div>
+</div>
 <!--footer close-->
 </body>
 </html>

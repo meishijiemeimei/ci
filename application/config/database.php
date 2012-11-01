@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'admin';
-$db['default']['password'] = 'admin';
-$db['default']['database'] = 'ci';
+$db['default']['hostname'] = '172.18.1.51';
+$db['default']['username'] = 'dfemall2';
+$db['default']['password'] = '123456';
+$db['default']['database'] = 'dfemall2';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

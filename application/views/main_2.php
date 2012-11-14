@@ -33,7 +33,7 @@
 </head>
 <body>
     <!--navigation start-->
-  
+    
     <div id="header"><a href="http://www.df-emall.com/"><img src="<?=base_url()?>images/logo.jpg" alt="" /></a></div>
 <!--navigation end-->
         <!--navigation start-->
@@ -55,8 +55,8 @@
               <div class="main_title">
                   <div class="main_titlename">分类 </div>                  
               </div>
-              <div class="main_newslist"  >
-                  <table borer="0" width="100%" class="main_newslist_list">
+              <div class="main_newslist"   >
+                  <table borer="0" width="100%" class="main_newslist_list"  >
                     <?foreach ($shopsort1 as $row):?>
                       <tr>
                       <td width="10%" align="center">·</td>
@@ -68,7 +68,7 @@
             </div>
             <div class="main_center">
               <div class="main_title">
-                  <div class="main_titlename">当前类别 ：所有类别</div>                  
+                  <div class="main_titlename">当前类别 ：<?foreach ($nowshopsort as $row):?> <?=$row->shop_sort_title2 ?><?endforeach;?></div>                  
               </div>
               <div class="main_piclist"> 
                 
@@ -76,7 +76,7 @@
                     <?foreach ($shoplist as $row):?>
                       <li>
                         <img src="<?=$row->shop_images?>" height="110" alt="" /><br />
-                        <div style="text-align:left; font-size:14px;  color:#666666;margin-top:10px;width:180; height:25px; overflow:hidden;"><?=$row->shop_title?></a></div>
+                        <div style="text-align:left; font-size:14px; color:#666666;margin-top:10px;width:180; height:25px; overflow:hidden;"><?=$row->shop_title?></a></div>
                         <div style="text-align:left;"><strong>产地</strong>：<?=$row->shop_area?> 
                           <strong>产品ID</strong>：<?=$row->shop_id?> </div>
 						<div style="text-align:left;"><strong>品牌</strong>：<?=$row->shop_sort_title1?> 

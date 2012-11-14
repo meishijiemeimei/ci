@@ -31,18 +31,18 @@
   </tr>
   <tr>
     <td  bgcolor="#FFFFFF" width="20%" valign="top">
-      <a href="<?=base_url()?>admin.php/main">新闻管理</a>
-      <a href="<?=base_url()?>admin.php/main/addnews">添加新闻</a>
+      <a href="<?=base_url()?>admin.php/shop/allsort">分类管理</a>
+      <a href="<?=base_url()?>admin.php/shop/addsort">添加分类</a>
       <br>
       <br>
-      <a href="<?=base_url()?>admin.php/shop">店铺管理</a>
-      <a href="<?=base_url()?>admin.php/shop/addshop">添加店铺</a>
+      <a href="<?=base_url()?>admin.php/shop">产品管理</a>
+      <a href="<?=base_url()?>admin.php/shop/addshop">添加产品</a>
     </td>
     <td  bgcolor="#FFFFFF" >
 
       <ul>
         <?foreach ($news as $row):?>
-          <li> · 新闻标题：<?=$row->blog_title?> -------------------<a href="<?=base_url()?>admin.php/main/delnews/<?=$row->blog_id?>">删除</a></li>
+          <li> · 产品名称：<?=$row->blog_title?> -------------------<a href="<?=base_url()?>admin.php/main/delnews/<?=$row->blog_id?>">删除</a></li>
         <?endforeach;?> 
       </ul>
     </td>

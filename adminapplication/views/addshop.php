@@ -71,20 +71,27 @@
     <td colspan="2" bgcolor="#FFFFFF">后台管理</td>
   </tr>
   <tr>
-    <td  bgcolor="#FFFFFF" width="20%" valign="top"><a href="<?=base_url()?>admin.php/shop">商铺管理</a></td>
+    <td  bgcolor="#FFFFFF" width="20%" valign="top"><a href="<?=base_url()?>admin.php/shop">产品管理</a></td>
     <td  bgcolor="#FFFFFF" >
 
       
         <form id="addshop" name="addshop" action="<?=base_url()?>admin.php/shop/addshop_insert" method="post">
         商铺标题： <input type="text" name="title" id="title" />
+        产地：<input type="text" name="shop_area" id="shop_area" />
         <br>
         类别： 
-          <select  name="sortid" id="sortid" >            
-            <?foreach ($shopsort as $row):?>
-            <option value="<?=$row->shop_sort_id?>"><?=$row->shop_sort_title?></option>
+        品牌
+          <select  name="sortid1" id="sortid1" >            
+            <?foreach ($shopsort1 as $row):?>
+            <option value="<?=$row->shop_sort_id1?>"><?=$row->shop_sort_title1?></option>
             <?endforeach;?> 
           </select>          
-      
+      	属性
+        <select  name="sortid2" id="sortid2" >            
+            <?foreach ($shopsort2 as $row):?>
+            <option value="<?=$row->shop_sort_id2?>"><?=$row->shop_sort_title2?></option>
+            <?endforeach;?> 
+          </select> 
         <br>
         商铺缩略图： <input type="text" name="shop_images" id="url1" value="" /> <input type="button" id="image1" value="选择图片" />（网络图片 + 本地上传）
         <br>

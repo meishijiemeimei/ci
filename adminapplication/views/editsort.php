@@ -81,17 +81,17 @@
         类别： 
           <select  name="sort_id" id="sort_id" >
           	  <?php if ($row->sort_id == '1'): ?>
-              <option value="1" selected="selected">按品牌</option>  
+              <option value="1" selected="selected">按品牌</option> 
+              <option value="2">按属性</option>   
 			  <?php elseif ($row->sort_id == '2'): ?>
-              <option value="2">按属性</option> 
+              <option value="1">按品牌</option> 
+              <option value="2" selected="selected">按属性</option> 
 			  <?php else: ?>
               <option value=" ">　　　</option> 
-			  <?php endif; ?>  
-          	   
-              <option value="1">按品牌</option> 
-              <option value="2">按属性</option>      
+			  <?php endif; ?>
           
-          </select>          
+          </select>
+                    
       
        
         <input type="submit" name="button" style="margin-left:80px;" value="确认">

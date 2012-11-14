@@ -14,7 +14,7 @@ class Shop extends CI_Controller {
   		$this->load->view('shop',$date);
 
  	}
-	public function getshop()
+	/*public function getshop()
  	{
         $id = $this->uri->segment(3, 1);
   		$this->load->model('shop_model');
@@ -24,7 +24,7 @@ class Shop extends CI_Controller {
   		$this->load->view('editshop');
 
   		
- 	}
+ 	}*/
 	public function editshop_update()
  	{
        	$id = $this->uri->segment(3, 1);
@@ -40,7 +40,10 @@ class Shop extends CI_Controller {
   		$this->load->model('shop_model');
   		
   		$date['shop']=$this->shop_model->getshop($id);
-		$date['shopsort']=$this->shop_model->getsort();
+		
+		$date['shopsort1']=$this->shop_model->getsort1();
+		$date['shopsort2']=$this->shop_model->getsort2();
+		
   		$this->load->view('editshop',$date);
 
   		
@@ -50,8 +53,8 @@ class Shop extends CI_Controller {
   		$this->load->model('shop_model');
   		
   		 
-		$date['shopsort']=$this->shop_model->getsort();
-  		 
+		$date['shopsort1']=$this->shop_model->getsort1();
+  		$date['shopsort2']=$this->shop_model->getsort2();
   		$this->load->view('addshop',$date);
 
   		
@@ -88,11 +91,14 @@ class Shop extends CI_Controller {
 	 public function allsort()
  	{
 		$sortid = $this->uri->segment(3, 1);
-  		$this->load->model('shop_model');
-  		$date['sort']=$this->shop_model->getsortid($sortid);
-  		
-
-  		$this->load->view('allsort',$date);
+		$this->load->model('shop_model');
+		if($sortid==1){  		
+  			$date['sort1']=$this->shop_model->getsort1();
+			$this->load->view('allsort1',$date);
+		}else{
+			$date['sort2']=$this->shop_model->getsort2();
+			$this->load->view('allsort2',$date);
+			}
 
  	}
 	
@@ -111,11 +117,32 @@ class Shop extends CI_Controller {
   		redirect('/shop/allsort');
   		
  	}
-	public function delsort()
+	public function delsort1()
  	{
 		$sortid = $this->uri->segment(3, 1);
   		$this->load->model('shop_model');
-  		$this->shop_model->delsort($sortid);
+  		$this->shop_model->delsort1($sortid);
+  		 
+  		$sortid = $this->uri->segment(3, 1);
+		 
+		if($sortid==1){  		
+  			$date['sort1']=$this->shop_model->getsort1();
+			 redirect('/shop/allsort/1');
+			$this->load->view('allsort/1',$date);
+			
+		}else{
+			$date['sort2']=$this->shop_model->getsort2();
+			 redirect('/shop/allsort/2');
+			$this->load->view('allsort/2',$date);
+			} 		 
+		
+  		
+ 	}
+	public function delsort2()
+ 	{
+		$sortid = $this->uri->segment(3, 1);
+  		$this->load->model('shop_model');
+  		$this->shop_model->delsort2($sortid);
   		 
   		 
 		$date['sort']=$this->shop_model->getallsort();
@@ -123,21 +150,37 @@ class Shop extends CI_Controller {
   		$this->load->view('allsort',$date);
   		
  	}
-	public function editsort()
+	public function editsort1()
  	{
   		
-  		$id = $this->uri->segment(3, 1);
-  		$this->load->model('shop_model');
-  		
-  		$date['sort']=$this->shop_model->getonesort($id);
-		
-  		$this->load->view('editsort',$date); 
+  		$id = $this->uri->segment(3, 1); 	
+		$this->load->model('shop_model');
+  		$date['sort']=$this->shop_model->getsortone1($id);
+		$this->load->view('editsort1',$date);
+	
  	}
-	public function editsort_update()
+	public function editsort2()
+ 	{
+  		
+  		$id = $this->uri->segment(3, 1); 
+		$this->load->model('shop_model');
+  		$date['sort']=$this->shop_model->getsortone2($id);
+		$this->load->view('editsort2',$date);
+	
+ 	}
+	public function editsort_update1()
  	{
        	$id = $this->uri->segment(3, 1);
   		$this->load->model('shop_model');
-  		$this->shop_model->updatesort($id);
+  		$this->shop_model->updatesort1($id);
+  		redirect('/shop/allsort');
+  		
+ 	}
+	public function editsort_update2()
+ 	{
+       	$id = $this->uri->segment(3, 1);
+  		$this->load->model('shop_model');
+  		$this->shop_model->updatesort2($id);
   		redirect('/shop/allsort');
   		
  	}

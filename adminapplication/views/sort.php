@@ -41,8 +41,8 @@
       <a href="<?=base_url()?>admin.php/shop/addsort">添加分类</a>
       <br>
       <br>
-      <a href="<?=base_url()?>admin.php/shop">店铺管理</a>
-      <a href="<?=base_url()?>admin.php/shop/addshop">添加店铺</a>
+      <a href="<?=base_url()?>admin.php/shop">产品管理</a>
+      <a href="<?=base_url()?>admin.php/shop/addshop">添加产品</a>
 
     </td>
     <td  bgcolor="#FFFFFF" >

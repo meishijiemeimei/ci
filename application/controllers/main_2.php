@@ -1,5 +1,5 @@
 <?php
-class Main extends CI_Controller {
+class Main_2 extends CI_Controller {
 	function __construct()
  	{
   		parent::__construct();
@@ -18,19 +18,19 @@ class Main extends CI_Controller {
 		$date['shopsort2']=$this->shop_model->getsort2();
 		/*获取当前分类*/
 		if($sid!=0){
-			$date['nowshopsort']=$this->shop_model->getonesort($sid);
+			$date['nowshopsort']=$this->shop_model->getonesort2($sid);
 			}
 		
 		
 		
-		$user=$this->shop_model->user_select_all($sid);
+		$user=$this->shop_model->user_select_all2($sid);
 		$pageall=count($user);
 		$pagenum=24;
 
 		$config['total_rows']=$pageall;
 		$config['per_page']=$pagenum;
 		$config['num_links']=3;
-		$config['base_url']="/product/index.php/main/index/".$sid."/";
+		$config['base_url']="/product/index.php/main2/index/".$sid."/";
 		$config['use_page_numbers']=true;
 		$config['uri_segment'] = 4;
 		$config['num_tag_open'] = '<span>';
@@ -57,9 +57,9 @@ class Main extends CI_Controller {
 		//var_dump($list);
 		
 		if($sid!=0){
-			$this->load->view('main',$date);
+			$this->load->view('main_2',$date);
 			}else{
-			$this->load->view('main_nosort',$date);	
+			$this->load->view('main_nosort2',$date);	
 				
 			}
 
